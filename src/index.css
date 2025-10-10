@@ -7,7 +7,7 @@
   --paper: #ffffff;
   --ink: #101828;
   --muted: #667085;
-  --primary: #ffd400;       /* yellow banner */
+  --primary: #ffd400;       
   --primary-ink: #1a1a1a;
   --ring: rgba(17, 24, 39, .08);
   --radius: 16px;
@@ -17,19 +17,19 @@ html, body, #root { height: 100%; }
 body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Thai", sans-serif;
-  background: #0b1733; /* dark outer frame like mock */
+  background: #0b1733; 
 }
 .labboy {
   min-height: 100%;
   background: var(--paper);
   max-width: 1120px;
   margin: 0 auto;
-  box-shadow: 0 0 0 24px #0b1733; /* side gutters like screenshot */
+  box-shadow: 0 0 0 24px #0b1733; 
 }
 
 /* ---------- Topbar ---------- */
 .topbar {
-  position: relative;       /* อ้างอิงให้ dropdown ติดขอบขวา */
+  position: relative;       
   z-index: 15;
   height: 64px;
   display: flex;
@@ -68,7 +68,7 @@ body {
 /* ---------- Dropdown Menu ---------- */
 .dropdown-menu {
   position: absolute;
-  top: 64px;     /* เท่าความสูง topbar */
+  top: 64px;     
   right: 0;
   width: 200px;
   background: #e0e0e0;
@@ -94,14 +94,13 @@ body {
 .dropdown-menu a:last-child { border-bottom: 0; }
 .dropdown-menu a:hover { background: #ffd400; }
 
-/* คลิคนอกเมนูเพื่อปิด */
 .scrim {
   position: fixed;
   inset: 0;
   background: transparent;
   border: 0;
   padding: 0;
-  z-index: 12; /* ต่ำกว่าเมนู (topbar z=15) */
+  z-index: 12; 
 }
 
 /* ---------- Intro banner ---------- */
@@ -203,31 +202,29 @@ body {
   padding: 28px 16px 40px;
 }
 
-/* ====== EQUIPMENT PAGE (สวย/เรียบร้อย/ responsive) ====== */
+/* ====== EQUIPMENT PAGE ====== */
 :root{
   --card: #ffffff;
   --ink: #0f172a;
   --muted: #64748b;
-  --brand: #0b1733;     /* ปุ่มหลัก */
-  --chip: #0b174a;      /* ชิปตัวเลือก */
-  --ok: #16a34a;        /* เขียว */
-  --no: #ef4444;        /* แดง */
+  --brand: #0b1733;     
+  --chip: #0b174a;      
+  --ok: #16a34a;       
+  --no: #ef4444;       
   --ring: rgba(2,6,23,.12);
   --radius: 14px;
   --shadow-md: 0 2px 6px rgba(2,6,23,.08), 0 8px 24px rgba(2,6,23,.08);
   --shadow-sm: 0 1px 3px rgba(2,6,23,.08), 0 1px 2px rgba(2,6,23,.06);
 }
 
-/* พื้นหลังรวม (ให้คล้ายหน้า Home) */
 .equip__wrap {
   background: var(--card);
   max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 0 0 24px #0b1733;   /* กรอบน้ำเงินเข้มด้านข้าง */
+  box-shadow: 0 0 0 24px #0b1733;   
   min-height: 100vh;
 }
 
-/* คอนเทนต์ด้านใน */
 .equip__container{
   padding: 18px 20px 36px;
 }
@@ -246,7 +243,6 @@ body {
   margin: 6px 2px 12px;
 }
 
-/* เลย์เอาต์สองคอลัมน์ */
 .equip__grid{
   display: grid;
   grid-template-columns: 1fr;
@@ -259,7 +255,6 @@ body {
   }
 }
 
-/* การ์ดซ้าย (รูป + ตัวเลือก) */
 .equip__left{
   background: #f8fafc;
   border: 1px solid #e5e7eb;
@@ -310,7 +305,6 @@ body {
 .equip__chip:hover{ transform: translateY(-1px); }
 .equip__chip.is-picked{ outline: 3px solid var(--ring); }
 
-/* กล่องฟีดแบ็ก */
 .equip__feedback{
   margin-top: 10px;
   padding: 12px 14px;
@@ -325,7 +319,6 @@ body {
   background:#fee2e2; color:#7f1d1d;
 }
 
-/* ปุ่ม next */
 .equip__buttons{ margin-top: 14px; display: flex; justify-content: flex-end; }
 .equip__next{
   background: var(--brand);
@@ -366,6 +359,62 @@ body {
 .equip__table{ display:grid; gap:10px; }
 .equip__row{ display:flex; justify-content: space-between; align-items:center; gap:8px; }
 .equip__name{ color: var(--ink); font-size: 14px; }
+
+/* Equipment checklist table  */
+.equip__table {
+  display: grid;
+  gap: 6px;
+}
+
+.equip__thead,
+.equip__row {
+  display: grid;
+  grid-template-columns: 1fr 80px 80px; 
+  align-items: center;
+  column-gap: 12px;
+}
+
+.equip__thead {
+  font-weight: 600;
+  color: #0f172a;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.equip__thCenter,
+.equip__qtyCell,
+.equip__statusCell {
+  text-align: center;
+}
+
+.equip__row {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #eef2f7;
+  background: #ffffff;
+}
+
+.equip__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.equip__qtyBadge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #eef6ff;
+  border: 1px solid #b6d4fe;
+  display: inline-block;
+  line-height: 1.6;
+}
+
+.equip__qtyDash {
+  color: #9ca3af;
+}
 
 /* Topbar (โลโก้ + ชื่อ) ให้สมูทเหมือนหน้า Home */
 .topbar{
