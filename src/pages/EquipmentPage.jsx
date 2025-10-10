@@ -195,7 +195,7 @@ export default function EquipmentPage() {
                 {hasAnswer === true && (
                   <div className="equip__qtyWrap" style={{ marginTop: 12 }}>
                     <label className="equip__qtyLabel" htmlFor="qty-input">
-                      มีกี่อัน
+                      ใช่กี่อัน
                     </label>
                     <input
                       id="qty-input"
@@ -229,8 +229,8 @@ export default function EquipmentPage() {
 
             <div className="equip__table">
               <div className="equip__thead">
-              <span>ชื่ออุปกรณ์</span>
-              <span className="equip__thCenter">กี่อัน</span>
+              <span>อุปกรณ์</span>
+              <span className="equip__thCenter">อัน</span>
               <span className="equip__thCenter">มี/ไม่มี</span>
             </div>
 
