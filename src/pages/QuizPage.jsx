@@ -317,6 +317,7 @@ export default function QuizPage() {
             <div className="quiz__actions">
               <button className="quiz__btnPrimary" onClick={reset}>เริ่มใหม่</button>
               <button className="quiz__btnOutline" onClick={() => navigate(`/lab/${id}/content`)}>กลับเนื้อหา</button>
+              <button className="quiz__btnOutline" onClick={() => navigate("/")}>Home</button>
             </div>
           </section>
         )}

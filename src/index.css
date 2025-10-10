@@ -589,7 +589,9 @@ body {
   padding:16px;
   box-shadow:0 1px 3px rgba(2,6,23,.06);
 }
-.quiz__actions{ display:flex; gap:10px; margin-top:12px; }
+.quiz__actions{ 
+  display:flex; gap:10px; margin-top:12px; 
+}
 .quiz__btnPrimary{
   background:var(--brand); color:#fff; border:0; border-radius:10px;
   padding:10px 14px; cursor:pointer; box-shadow: var(--shadow); font-weight:800;
@@ -605,3 +607,6 @@ body {
   .quiz__btn{ transition:none; }
 }
 
+.quiz__actions button {
+  margin: 0.25rem;
+}
