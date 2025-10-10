@@ -22,7 +22,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   const [showNotice, setShowNotice] = useState(true);
-  const [secs, setSecs] = useState(15);
+  const [secs, setSecs] = useState(30);
 
   useEffect(() => {
     document.body.style.overflow = (menuOpen || showNotice) ? "hidden" : "";
@@ -32,7 +32,7 @@ export default function Home() {
   useEffect(() => {
     if (!showNotice) return;
     const tick = setInterval(() => setSecs((s) => (s > 0 ? s - 1 : 0)), 1000);
-    const t = setTimeout(() => setShowNotice(false), 15000);
+    const t = setTimeout(() => setShowNotice(false), 30000);
     return () => { clearInterval(tick); clearTimeout(t); };
   }, [showNotice]);
 
