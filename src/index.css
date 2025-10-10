@@ -109,6 +109,9 @@ body {
   color: var(--primary-ink);
   padding: 18px 20px;
   border-bottom: 1px solid #f0c500;
+    max-width: 1000px;
+  margin: 16px auto 24px;  
+  text-align: center;
 }
 .intro__title {
   margin: 0 0 6px 0;
@@ -193,6 +196,12 @@ body {
   .card__desc  { font-size: 12px; line-height: 1.5; }
   .card__button { width: 100%; padding: 8px 10px; font-size: 14px; }
 }
+
+.card__media--clickable { cursor: pointer; position: relative; }
+.card__media--clickable::after { content: ""; position: absolute; inset: 0; }
+.card__media--clickable:hover img { filter: brightness(0.92); transition: filter .2s ease; }
+.card__media--clickable:focus { outline: none; }
+.card__media--clickable:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -334,7 +343,6 @@ body {
   opacity:.5; cursor:not-allowed; filter: grayscale(.2);
 }
 
-/* การ์ดขวา (ตารางสรุป) */
 .equip__aside{
   background: #f8fafc;
   border: 1px solid #e5e7eb;
@@ -360,7 +368,6 @@ body {
 .equip__row{ display:flex; justify-content: space-between; align-items:center; gap:8px; }
 .equip__name{ color: var(--ink); font-size: 14px; }
 
-/* Equipment checklist table  */
 .equip__table {
   display: grid;
   gap: 6px;
@@ -416,7 +423,6 @@ body {
   color: #9ca3af;
 }
 
-/* Topbar (โลโก้ + ชื่อ) ให้สมูทเหมือนหน้า Home */
 .topbar{
   height:60px;
   display:flex; align-items:center; justify-content:space-between;
@@ -465,19 +471,17 @@ body {
 .content__theory{ margin-bottom: 6px; }
 .content__link{
   display:inline-block;
-  color:#b91c1c;        /* สีแดงตามภาพตัวอย่าง */
+  color:#b91c1c;       
   text-decoration: underline;
   font-weight: 600;
 }
 
-/* Steps */
 .content__steps{
   margin: 0 0 0 18px;
   padding: 0;
   line-height: 1.7;
 }
 
-/* Video box (responsive 16:9) */
 .content__video{
   position: relative;
   width: 100%;
@@ -494,7 +498,6 @@ body {
   border:0; display:block;
 }
 
-/* Actions */
 .content__actions{
   display:flex; justify-content:flex-end; margin-top: 10px;
 }
@@ -520,7 +523,6 @@ body {
   --radius:14px;
 }
 
-/* frame ให้เข้าธีมเดียวกับหน้าอื่น */
 .quiz__wrap{
   background:#fff;
   max-width:900px;
@@ -529,7 +531,6 @@ body {
   box-shadow:0 0 0 24px #0b1733;
 }
 
-/* layout */
 .quiz__container{ padding:18px 20px 40px; }
 .quiz__title{
   text-align:center;
@@ -539,7 +540,6 @@ body {
   letter-spacing:.2px;
 }
 
-/* head: question x/y + progress bar */
 .quiz__qhead{ margin-bottom:14px; }
 .quiz__qnum{ font-size:14px; color:var(--muted); margin-bottom:8px; }
 .quiz__qbar{
@@ -553,7 +553,6 @@ body {
   border-radius:999px;
 }
 
-/* question panel */
 .quiz__question{
   background:var(--panel);
   border:1px solid var(--border);
@@ -566,7 +565,6 @@ body {
   margin-bottom:14px;
 }
 
-/* choices grid */
 .quiz__choices{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -592,7 +590,6 @@ body {
 .quiz__btn.correct{ background:#dcfce7; border-color:#86efac; }
 .quiz__btn.wrong{ background:#fee2e2; border-color:#fecaca; }
 
-/* result panel */
 .quiz__panel{
   background:#fff;
   border:1px solid var(--border);
@@ -608,7 +605,6 @@ body {
 .quiz__state.ok{ color:var(--ok); }
 .quiz__state.no{ color:var(--no); }
 
-/* score bar (green meter) */
 .quiz__scorebar{
   height:12px; background:#eef2f7; border-radius:8px; overflow:hidden;
   margin-bottom:10px;
@@ -619,10 +615,8 @@ body {
   transition: width .25s ease;
 }
 
-/* small stats */
 .quiz__stats{ display:flex; gap:18px; color:#334155; font-size:14px; }
 
-/* next button (bottom-right feel) */
 .quiz__nextWrap{ display:flex; justify-content:flex-end; }
 .quiz__next{
   background:var(--brand); color:#fff; border:0; border-radius:12px;
@@ -630,7 +624,6 @@ body {
 }
 .quiz__next:disabled{ opacity:.5; cursor:not-allowed; }
 
-/* summary */
 .quiz__summary{
   background:var(--panel);
   border:1px solid var(--border);
@@ -650,7 +643,6 @@ body {
   border-radius:10px; padding:10px 14px; cursor:pointer; font-weight:700;
 }
 
-/* motion preference */
 @media (prefers-reduced-motion: reduce){
   .quiz__qbar span, .quiz__scorebar .ok{ transition:none; }
   .quiz__btn{ transition:none; }

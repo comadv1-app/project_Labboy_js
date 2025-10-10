@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./index.css";
-// Hello
+
 const lessons = [
   {
     id: "stoich",
@@ -31,41 +31,32 @@ const lessons = [
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate(); // ✅ เพิ่มบรรทัดนี้
+  const navigate = useNavigate();
 
-  // ล็อคสกอร์ลหน้าเมื่อเมนูเปิด
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  const go = (id) => navigate(`/lab/${id}/equipment`);
+
   return (
     <div className="labboy">
-      {/* Top Bar */}
       <header className="topbar">
         <div className="topbar__brand">
-            <img
-                src="/lab-tool.png"
-                alt="LabBoy Logo"
-                className="brand__icon"
-                aria-hidden="true"
-            />
-            <span className="brand__name">LabBoy</span>
-            </div>
+          <img src="/lab-tool.png" alt="LabBoy Logo" className="brand__icon" aria-hidden="true" />
+          <span className="brand__name">LabBoy</span>
+        </div>
 
-        {/* ปุ่ม 3 ขีด */}
         <button
           className={`hamburger ${menuOpen ? "active" : ""}`}
           aria-label="เปิดเมนู"
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span />
-          <span />
-          <span />
+          <span /><span /><span />
         </button>
 
-        {/* เมนูด้านขวา */}
         {menuOpen && (
           <nav className="dropdown-menu" role="menu">
             <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
@@ -74,16 +65,8 @@ export default function Home() {
         )}
       </header>
 
-      {/* คลิคนอกเมนูเพื่อปิด */}
-      {menuOpen && (
-        <button
-          className="scrim"
-          aria-label="ปิดเมนู"
-          onClick={() => setMenuOpen(false)}
-        />
-      )}
+      {menuOpen && <button className="scrim" aria-label="ปิดเมนู" onClick={() => setMenuOpen(false)} />}
 
-      {/* Yellow Intro Banner */}
       <section className="intro" id="home">
         <h1 className="intro__title">LabBoy</h1>
         <p className="intro__text">
@@ -93,11 +76,21 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Cards */}
       <main className="cards" id="content">
         {lessons.map((x) => (
-          <article key={x.id} className="card">
-            <div className="card__media">
+          <article
+            key={x.id}
+            className="card"
+          >
+            <div
+              className="card__media card__media--clickable"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(`/lab/${x.id}/equipment`)}
+              onKeyDown={(e) => e.key === "Enter" && navigate(`/lab/${x.id}/equipment`)}
+              aria-label={`เปิดบทเรียน ${x.title}`}
+              title={`เปิดบทเรียน ${x.title}`}
+            >
               <img src={x.img} alt={`${x.title} illustration`} />
               <div className="card__headline">
                 <span className="card__headlineMain">{x.title}</span>
@@ -110,11 +103,10 @@ export default function Home() {
               </h3>
               <p className="card__desc">{x.desc}</p>
 
-              {/* ✅ ปุ่มไปยังหน้าอุปกรณ์ของ lab นั้น */}
               <button
                 className="card__button"
                 type="button"
-                onClick={() => navigate(`/lab/${x.id}/equipment`)}
+                onClick={() => go(x.id)}
               >
                 เริ่มเรียนรู้
               </button>
