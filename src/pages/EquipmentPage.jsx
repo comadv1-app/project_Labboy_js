@@ -195,7 +195,7 @@ export default function EquipmentPage() {
                 {hasAnswer === true && (
                   <div className="equip__qtyWrap" style={{ marginTop: 12 }}>
                     <label className="equip__qtyLabel" htmlFor="qty-input">
-                      ใช่กี่อัน
+                      ใช้กี่อัน
                     </label>
                     <input
                       id="qty-input"
