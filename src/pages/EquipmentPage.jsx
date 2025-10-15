@@ -36,7 +36,7 @@ const LABS = {
       { id: "beaker", image: "/Beaker.jpg", choices: ["Beaker", "Cylinder", "Flask"], answerIndex: 0, tip: "ใช้เป็นห้องพัฒนา (developing chamber)" },
       { id: "ruler", image: "/Ruler.jpg", choices: ["Ruler", "Pipette", "Funnel"], answerIndex: 0, tip: "ใช้วัดระยะห่างของจุดบนกระดาษ" },
       { id: "pencil", image: "/Pencil.jpg", choices: ["Pen", "Pencil", "Marker"], answerIndex: 1, tip: "ใช้ขีดเส้นบนกระดาษ (ไม่ควรใช้ปากกา)" },
-      { id: "solvent", image: "/Solvent.jpg", choices: ["Solvent", "Beaker", "Funnel"], answerIndex: 0, tip: "ใช้เป็น mobile phase ละลายและพาสารตัวอย่างขึ้นบนกระดาษ" },
+      { id: "solvent", image: "/Solvent.jpg", choices: ["Solvent", "Beaker", "Funnel"], answerIndex: 0, tip: "เป็นสารที่ใช้ละลายสารอื่นให้กลายเป็นสารละลาย โดยสามารถเป็นของแข็ง ของเหลว หรือแก๊สก็ได้" },
     ],
     checklist: ["Filter paper", "Capillary tube", "Beaker", "Ruler", "Pencil", "Solvent"],
   },
