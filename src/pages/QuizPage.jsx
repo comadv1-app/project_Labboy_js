@@ -251,7 +251,7 @@ export default function QuizPage() {
                     <span className="ok" style={{ width: `${barPercent}%` }} />
                   </div>
                   <div className="quiz__stats">
-                    <div>เวลา: {mmss}</div>
+                    <div>ใช้เวลา: {mmss}</div>
                     <div>คะแนน: {score}/{total}</div>
                   </div>
                 </>
